@@ -30,10 +30,17 @@
             quis enim.
         </p>
         <h2 class="text-center">Job Openings</h2>
-        <p>TODO</p>
+        <p>
+            <!-- используем jinja templating engine -->
+        <div>
+            {% for job in jobs %}
+            {% include 'jobitem.html' %}
+            {% endfor %}
+        </div>
+        </p>
         <!-- применяем css стили inline -->
         <div style="text-align: center">
-            <button type="button" class="btn btn-secondary btn-lg">Contact Us</button>
+            <button type="button" class="btn btn-outline-secondary btn-lg">Contact Us</button>
             <p class="mt-5">Copyright 2026, Araz Abdyev</p>
         </div>
     </div>
