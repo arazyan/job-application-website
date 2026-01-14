@@ -1,0 +1,53 @@
+<div class="header-container">
+    <img id="background-logo" class="img-fluid" src="static/banner.jpg" alt="Background Logo" />
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-glass">
+        <a class="navbar-brand" href="/">PyJobs</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+                <a class="nav-item nav-link active" href="#">Home</a>
+                <a class="nav-item nav-link" href="/usage">Usage</a>
+                <a class="nav-item nav-link" href="/about">About</a>
+            </div>
+        </div>
+    </nav>
+</div>
+
+<style>
+    .header-container {
+        position: relative;
+        width: 100%;
+    }
+
+    #background-logo {
+        height: 25vh;
+        /* takes up 25% of the device screen*/
+        min-height: 80px;
+        /* to prevent getting small on tiny phones */
+        width: 100%;
+        object-fit: cover;
+        /* to prevent stretching */
+    }
+
+    .header-container .navbar {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 10;
+        /* Ensures navbar stays on top */
+    }
+
+    /* Custom Utility Class */
+    .bg-glass {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+        /* Use a Bootstrap variable-like color with transparency */
+        background-color: rgba(0, 0, 0, 0.3);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+</style>

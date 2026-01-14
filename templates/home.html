@@ -1,53 +1,35 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="icon" href="/static/favicon.svg" />
-    <title>PyJobs</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-    <style>
-        #background-logo {
-            height: 360px;
-        }
-    </style>
-</head>
-
-<body>
-    <div class="container">
-        <h1 class="text-center mt-2 mb-2">Job Application Website</h1>
-        <div class="text-center">
-            <img id="background-logo" class="img-fluid" src="static/banner.jpg" alt="Background Logo" />
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/static/favicon.svg" />
+        <title>PyJobs</title>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+              rel="stylesheet"
+              integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+              crossorigin="anonymous" />
+    </head>
+    <body>
+        {% include 'navbar.html' %}
+        <div class="container">
+            <h2 class="text-center">About</h2>
+            <p>
+                PyJobs is a specialized job board built by Pythonistas, for Pythonistas. We believe that the Python ecosystem is
+                unique, and finding your next role shouldn't mean sifting through general "tech noise".
+            </p>
+            <h2 class="text-center pt-3">Job Openings</h2>
+            <p>
+                <div>
+                    {% for job in jobs %}
+                        {% include 'jobitem.html' %}
+                    {% endfor %}
+                </div>
+            </p>
         </div>
-        <h2 class="text-center mt-2 mb-2">About the project</h2>
-        <p class="lead">
-            Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo
-            ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis
-            dis parturient montes, nascetur ridiculus mus. Donec quam felis,
-            ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa
-            quis enim.
-        </p>
-        <h2 class="text-center">Job Openings</h2>
-        <p>
-            <!-- используем jinja templating engine -->
-        <div>
-            {% for job in jobs %}
-            {% include 'jobitem.html' %}
-            {% endfor %}
-        </div>
-        </p>
-        <!-- применяем css стили inline -->
-        <div style="text-align: center">
-            <button type="button" class="btn btn-outline-secondary btn-lg">Contact Us</button>
-            <p class="mt-5">Copyright 2026, Araz Abdyev</p>
-        </div>
-    </div>
-
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-        crossorigin="anonymous"></script>
-</body>
-
+        {% include 'footer.html' %}
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+                crossorigin="anonymous"></script>
+    </body>
 </html>
